@@ -41,6 +41,7 @@ void initArea(bool Area[Heigh][Weigh], bool withRandom) {
     }
 }
 
+//Графический вывод
 void printArea(bool Area[Heigh][Weigh]) {
     for (int i = 0; i < Heigh; i++) {
         for (int j = 0; j < Weigh; j++) {
@@ -55,6 +56,7 @@ void printArea(bool Area[Heigh][Weigh]) {
     //std::cout << std::endl;
 }
 
+//Безопасная строка
 int tR(int row) {
     if (row >= Heigh)
         return row - Heigh;
@@ -62,7 +64,7 @@ int tR(int row) {
         return Heigh + row;
     else return row;
 }
-
+//Безопасный столбец
 int tC(int column) {
     if (column >= Weigh)
         return column - Weigh;
@@ -71,6 +73,7 @@ int tC(int column) {
     else return column;
 }
 
+//Просчитывает логику и выводит следующее поколение на второй (пустой) массив)
 void turnSumulate(bool Area[Heigh][Weigh], bool NextArea[Heigh][Weigh]) {
     for (int row = 0; row < Heigh; row++) {
         for (int column = 0; column < Weigh; column++) {
@@ -180,6 +183,7 @@ void figurePlaner(bool Area[Heigh][Weigh], int row, int column) {
     lifeCount += 5;
 }
 
+//Функция игры
 void lifeGame(bool randomize, bool newRandom, int turnTime) {
     lifeCount = 0;
     if (newRandom)
